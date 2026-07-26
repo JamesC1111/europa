@@ -1,0 +1,24 @@
+:root { --navy: #102b3b; --cream: #f8f4ea; --teal: #c3dde0; --rose: #e76e59; --gold: #f2c653; }
+body { background: var(--cream); }
+.site-header { position: sticky; top: 0; z-index: 20; background: rgba(248,244,234,.91); backdrop-filter: blur(12px); }
+.site-header nav a { position: relative; text-decoration: none; }
+.site-header nav a::after { content:""; position:absolute; left:0; right:100%; bottom:-.35rem; height:2px; background:var(--rose); transition:right .2s ease; }
+.site-header nav a:hover::after, .site-header nav a:focus-visible::after { right:0; }
+.hero { position:relative; overflow:hidden; background: linear-gradient(118deg,#f8f4ea 0 57%,#d5e8e9 57%); }
+.hero::before { content:"COUNTY / COUNTRY"; position:absolute; right:-.4em; bottom:-.3em; color:rgba(16,43,59,.06); font:600 clamp(3rem,10vw,8rem)/1 "DM Sans",sans-serif; letter-spacing:-.08em; pointer-events:none; }
+.hero-copy, .hero-note { position:relative; z-index:1; }
+.button { transition:transform .2s ease, box-shadow .2s ease; }
+.button:hover, .button:focus-visible { transform:translateY(-2px); box-shadow:0 7px 0 rgba(16,43,59,.18); }
+.local-to-local { max-width:53rem; margin:1.4rem 0 0; padding:1rem 1.1rem; border-left:3px solid var(--rose); background:rgba(255,255,255,.45); font-size:.94rem; }
+.map-card { overflow:hidden; border:1px solid rgba(16,43,59,.1); box-shadow: 12px 12px 0 rgba(16,43,59,.09); }
+.map-card::before { content:""; position:absolute; inset:3rem 12% 4rem; border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,.72),rgba(255,255,255,0) 68%); pointer-events:none; }
+.ireland-outline { position:relative; z-index:1; filter:saturate(.8) contrast(1.04); }
+.map-water { z-index:2; }.cork-marker { z-index:5; }.cork-marker:focus-visible { outline:3px solid var(--navy); outline-offset:2px; border-radius:999px; }
+.map-hint { position:relative; z-index:3; letter-spacing:.08em; }.map-hint::before { content:"↙"; color:var(--rose); font-size:1.2rem; margin-right:.45rem; }
+.map-aside { box-shadow:12px 12px 0 rgba(16,43,59,.11); }
+.profile { background:#fffdf8; }.profile-banner { position:relative; overflow:hidden; }.profile-banner::after { content:"×"; position:absolute; right:5%; top:-.35em; font:500 13rem/1 Newsreader,serif; color:rgba(255,255,255,.13); }.profile-banner>* { position:relative; z-index:1; }
+.connection-card { position:relative; overflow:hidden; border:1px solid rgba(16,43,59,.13); transition:transform .2s ease, box-shadow .2s ease; }.connection-card:hover { transform:translateY(-5px); box-shadow:7px 7px 0 rgba(16,43,59,.16); }.connection-card::after { content:""; position:absolute; right:-1.5rem; top:-1.5rem; width:5rem; height:5rem; border:1px solid rgba(16,43,59,.18); border-radius:50%; }
+.quiz-section { position:relative; overflow:hidden; background:var(--navy); }.quiz-section::after { content:"?"; position:absolute; right:3vw; bottom:-.35em; color:rgba(255,255,255,.05); font:600 18rem/1 Newsreader,serif; }.quiz-section>* { position:relative; z-index:1; }.quiz label { padding:.5rem .4rem; border-radius:.15rem; transition:background .18s ease; }.quiz label:hover { background:rgba(255,255,255,.09); }.quiz-result:not(:empty) { padding:1rem 1.1rem; background:rgba(242,198,83,.14); border-left:3px solid var(--gold); }
+.collaboration { padding:clamp(4rem,9vw,8rem) clamp(1.3rem,10vw,11rem); background:#fffdf8; display:grid; grid-template-columns:.85fr 1.15fr; gap:5rem; }.collaboration h2 { font:500 clamp(2.5rem,4.5vw,4.3rem)/.95 Newsreader,serif; letter-spacing:-.04em; margin:.2rem 0 1rem; }.collaboration-intro>p:last-child { max-width:33rem; }.collaboration-steps { list-style:none; padding:0; margin:0; border-top:1px solid var(--line); }.collaboration-steps li { display:grid; grid-template-columns:4.5rem 1fr; gap:.5rem; padding:1.25rem 0; border-bottom:1px solid var(--line); transition:padding-left .2s ease, background .2s ease; }.collaboration-steps li:hover { padding-left:.7rem; background:#f8f4ea; }.collaboration-steps span { font:500 .72rem "DM Mono",monospace; color:var(--rose); }.collaboration-steps h3 { margin:0; font:500 1.45rem Newsreader,serif; }.collaboration-steps p { grid-column:2; margin:0; font-size:.9rem; }
+.contribute { position:relative; overflow:hidden; }.contribute::after { content:"01"; position:absolute; right:7vw; bottom:-.2em; color:rgba(16,43,59,.08); font:500 13rem/1 Newsreader,serif; }.contribute>* { position:relative; z-index:1; }.check-item { transition:padding-left .2s ease, background .2s ease; }.check-item:hover { padding-left:.7rem; background:rgba(255,255,255,.2); }
+@media(max-width:720px) { .hero::before { bottom:-.15em; } .map-card,.map-aside { box-shadow:7px 7px 0 rgba(16,43,59,.1); }.connection-card:hover { transform:none; }.collaboration { grid-template-columns:1fr; gap:2.5rem; }.collaboration-steps li { grid-template-columns:3.5rem 1fr; } }
