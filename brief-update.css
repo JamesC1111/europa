@@ -15,3 +15,5 @@
 .map-aside .text-link { margin-top:auto; }
 .collaboration-steps li div { min-width:0; }
 @media (max-width:720px) { .site-header { gap:.75rem; }.site-header nav { gap:.6rem; }.site-header nav a { font-size:.76rem; }.brief-hero { grid-template-columns:1fr; }.brief-hero .hero-copy { padding-bottom:3.5rem; }.hero-europe { min-height:18rem; }.hero-europe span { position:absolute; left:50% !important; right:auto !important; top:50% !important; bottom:auto !important; width:78%; transform:translate(-50%,-50%) !important; text-align:center; font-size:2.1rem; }.brand-logo { width:200px; } }
+
+@media (max-width:420px) { .site-header { padding:.85rem 1rem; align-items:center; }.brand-logo { width:132px; flex:0 0 132px; }.site-header nav { gap:.45rem; flex:1; justify-content:flex-end; }.site-header nav a { white-space:nowrap; font-size:0; }.site-header nav a::before { font:600 .67rem "DM Sans",sans-serif; letter-spacing:.01em; }.site-header nav a:nth-child(1)::before { content:"Map"; }.site-header nav a:nth-child(2)::before { content:"How"; }.site-header nav a:nth-child(3)::before { content:"Join"; } }
