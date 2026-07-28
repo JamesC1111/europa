@@ -14,4 +14,4 @@
 .map-aside h3 span { color:#f2c653; font-size:.7em; font-style:italic; }
 .map-aside .text-link { margin-top:auto; }
 .collaboration-steps li div { min-width:0; }
-@media (max-width:720px) { .site-header { gap:.75rem; }.site-header nav { gap:.6rem; }.site-header nav a { font-size:.76rem; }.brief-hero { grid-template-columns:1fr; }.brief-hero .hero-copy { padding-bottom:3.5rem; }.hero-europe { min-height:18rem; }.hero-europe span { left:50%; bottom:auto; top:50%; width:78%; transform:translate(-50%,-50%); text-align:center; font-size:2.1rem; }.brand-logo { width:200px; } }
+@media (max-width:720px) { .site-header { gap:.75rem; }.site-header nav { gap:.6rem; }.site-header nav a { font-size:.76rem; }.brief-hero { grid-template-columns:1fr; }.brief-hero .hero-copy { padding-bottom:3.5rem; }.hero-europe { min-height:18rem; }.hero-europe span { position:absolute; left:50% !important; right:auto !important; top:50% !important; bottom:auto !important; width:78%; transform:translate(-50%,-50%) !important; text-align:center; font-size:2.1rem; }.brand-logo { width:200px; } }
