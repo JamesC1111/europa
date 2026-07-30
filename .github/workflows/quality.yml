@@ -1,0 +1,52 @@
+name: Quality
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate content, code and browser experience
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out the reviewed commit
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install pinned quality tools
+        run: npm ci
+
+      - name: Check content, local links, code, HTML, CSS and documentation
+        run: npm run check
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Check accessibility, console state, interactions and responsive layout
+        run: npm run check:browser
+
+      - name: Upload phone, tablet and desktop evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-qa
+          path: output/screenshots
+          if-no-files-found: warn
+          retention-days: 14

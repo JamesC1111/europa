@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "europa-ucc-county-pairings",
+  "title": "Europa Society at UCC | County Pairings",
+  "shortTitle": "Europa County Pairings",
+  "description": "A growing, student-built atlas that begins with Ireland's official county-country pairings and develops carefully sourced local-to-local research.",
+  "organisation": {
+    "name": "Europa Society at University College Cork",
+    "shortName": "Europa Society at UCC"
+  },
+  "project": {
+    "name": "County Pairings Project",
+    "type": "living-atlas",
+    "launchYear": 2026,
+    "language": "en-IE"
+  },
+  "canonicalUrl": "https://jamesc1111.github.io/europa/",
+  "repositoryUrl": "https://github.com/JamesC1111/europa",
+  "contact": {
+    "email": "europasociety@ucc.ie",
+    "contributionSubject": "County Pairing Research Contribution"
+  },
+  "scope": {
+    "irishCountySet": "The 26 traditional counties in the Republic of Ireland",
+    "officialLayer": "An Irish county and the European country assigned through Ireland's 2026 EU County Pairings initiative",
+    "researchLayer": "A specific overseas region, city, department, county-equivalent or other appropriate locality selected and researched by participating students",
+    "localResearchFocusMustBeNamed": true,
+    "wholeCountryIsNotALocalResearchFocus": true
+  },
+  "editorialPrinciples": [
+    "Begin with evidence rather than a preferred story.",
+    "Keep the official county-country pairing separate from the student-selected local research focus.",
+    "Label facts, interpretations, research leads and open questions distinctly.",
+    "Use claim-level sources, favouring primary and institutional sources.",
+    "Publish student names, quotations, images and work only with recorded permission.",
+    "Show similarities and differences without reducing either place to stereotypes.",
+    "Treat each page as a living record with visible review information."
+  ],
+  "statusLabels": {
+    "verified": {
+      "label": "Verified",
+      "meaning": "The claim is supported by a reviewed source listed in the record."
+    },
+    "under-review": {
+      "label": "Under review",
+      "meaning": "Material has been submitted but has not completed editorial review."
+    },
+    "research-lead": {
+      "label": "Research lead",
+      "meaning": "A promising question or connection that must not yet be presented as established fact."
+    },
+    "unassigned": {
+      "label": "Not yet assigned",
+      "meaning": "No value has been chosen or approved for this field."
+    },
+    "not-yet-recorded": {
+      "label": "Not yet recorded",
+      "meaning": "The atlas has not yet added or verified this information; it does not mean that no pairing exists."
+    }
+  },
+  "permissionsPolicy": {
+    "studentNamesRequireConsent": true,
+    "studentQuotesRequireConsent": true,
+    "studentImagesRequireConsent": true,
+    "thirdPartyMediaRequiresLicenceRecord": true,
+    "minorsRequireAdditionalSafeguardingReview": true
+  },
+  "review": {
+    "contentModelVersion": "1.0.0",
+    "siteMetadataStatus": "under-review",
+    "dataModelUpdated": "2026-07-30",
+    "lastReviewed": null,
+    "reviewedBy": null,
+    "nextReview": null
+  }
+}

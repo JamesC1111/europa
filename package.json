@@ -1,0 +1,26 @@
+{
+  "name": "europa-ucc-county-pairings",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quality tooling for the Europa Society at UCC static county pairings atlas.",
+  "type": "module",
+  "scripts": {
+    "check:content": "node scripts/validate-site.mjs",
+    "check:syntax": "node --check script.js && node --check scripts/build-county-map.mjs && node --check scripts/validate-site.mjs && node --check scripts/browser-audit.mjs",
+    "check:html": "html-validate --config scripts/htmlvalidate.config.mjs \"index.html\" \"pairings/**/*.html\" \"contribute/**/*.html\"",
+    "check:css": "stylelint \"*.css\" --config scripts/stylelint.config.mjs",
+    "check:docs": "markdownlint-cli2 --config scripts/.markdownlint-cli2.jsonc \"**/*.md\" \"#node_modules/**\" \"#output/**\"",
+    "check:browser": "node scripts/browser-audit.mjs",
+    "check": "npm run check:content && npm run check:syntax && npm run check:html && npm run check:css && npm run check:docs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "html-validate": "11.6.0",
+    "markdownlint-cli2": "0.23.2",
+    "playwright": "1.62.1",
+    "stylelint": "17.14.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

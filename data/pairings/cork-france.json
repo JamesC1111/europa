@@ -1,0 +1,311 @@
+{
+  "schemaVersion": "1.0.0",
+  "slug": "cork-france",
+  "route": "/pairings/cork-france/",
+  "title": "Cork and France",
+  "summary": "Cork's official 2026 county-country pairing with France, presented as the starting point for a student-led local-to-local research project.",
+  "status": {
+    "officialUmbrellaPairing": "verified",
+    "localResearchFocus": "unassigned",
+    "studentResearch": "research-lead",
+    "editorialReview": "published-prototype"
+  },
+  "statusLabels": [
+    {
+      "id": "verified",
+      "label": "Verified",
+      "appliesTo": "The official Cork-France umbrella pairing"
+    },
+    {
+      "id": "unassigned",
+      "label": "Local research focus not yet assigned",
+      "appliesTo": "The specific French region, city, department or county-equivalent to be researched with Cork"
+    },
+    {
+      "id": "research-lead",
+      "label": "Research lead",
+      "appliesTo": "Prompts and possible connections that are not yet established facts"
+    }
+  ],
+  "officialUmbrellaPairing": {
+    "irishCounty": {
+      "name": "Cork",
+      "slug": "cork"
+    },
+    "partnerCountry": {
+      "name": "France",
+      "code": "FR"
+    },
+    "initiative": {
+      "name": "Ireland's 2026 EU County Pairings initiative",
+      "year": 2026
+    },
+    "claim": "Cork is officially paired with France through Ireland's 2026 EU County Pairings initiative.",
+    "sourceRefs": [
+      "gov-ie-county-pairings-2026"
+    ]
+  },
+  "localResearchFocus": {
+    "status": "unassigned",
+    "place": null,
+    "country": "France",
+    "placeholder": "A specific French region, city, department or county-equivalent will be named only after student and editorial agreement.",
+    "selectionRequirements": [
+      "Name one specific locality rather than France as a whole.",
+      "Explain why the locality supports a meaningful two-way student investigation.",
+      "Record who proposed and approved the focus.",
+      "Support the choice with at least one reliable source.",
+      "Avoid presenting the local focus as an official government pairing unless an official source explicitly confirms it."
+    ]
+  },
+  "studentTeam": {
+    "status": "unassigned",
+    "corkParticipants": [],
+    "franceParticipants": [],
+    "academicOrCommunityAdvisers": [],
+    "editorialReviewers": [],
+    "placeholders": {
+      "corkParticipants": "Cork student contributors to be invited",
+      "franceParticipants": "Student contributors connected to the selected French locality to be invited",
+      "reviewers": "Reviewers to be recorded before substantive research is published"
+    },
+    "displayRule": "Do not publish a participant's name, quotation, image or work without recorded permission."
+  },
+  "similarities": [
+    {
+      "id": "language-learning-and-exchange",
+      "title": "Language learning and exchange",
+      "status": "research-lead",
+      "prompt": "Investigate the educational, cultural or civic exchanges that connect Cork with the selected French locality.",
+      "finding": null,
+      "sourceRefs": []
+    },
+    {
+      "id": "coast-ports-and-outward-looking-communities",
+      "title": "Coasts, ports and outward-looking communities",
+      "status": "research-lead",
+      "prompt": "If the selected French locality makes this comparison appropriate, examine how coastlines, ports, food and outward-looking communities shape both places.",
+      "finding": null,
+      "sourceRefs": []
+    },
+    {
+      "id": "student-life-and-local-identity",
+      "title": "Student life and local identity",
+      "status": "research-lead",
+      "prompt": "Compare how students experience local identity, belonging and European connection in Cork and the selected French locality.",
+      "finding": null,
+      "sourceRefs": []
+    }
+  ],
+  "differences": [
+    {
+      "id": "local-government-and-geography",
+      "title": "Local government and geography",
+      "status": "research-lead",
+      "prompt": "Compare the scale, geography and civic role of Cork with the selected French locality without assuming the two administrative systems are equivalent.",
+      "finding": null,
+      "sourceRefs": []
+    },
+    {
+      "id": "language-in-daily-life",
+      "title": "Language in daily life",
+      "status": "research-lead",
+      "prompt": "Explore how Irish, English, French and any locally relevant languages are encountered in education, public life and identity.",
+      "finding": null,
+      "sourceRefs": []
+    },
+    {
+      "id": "student-perspectives",
+      "title": "Student perspectives",
+      "status": "research-lead",
+      "prompt": "Invite students in both places to identify a difference that matters to them and support the comparison with context rather than stereotype.",
+      "finding": null,
+      "sourceRefs": []
+    }
+  ],
+  "stories": [
+    {
+      "id": "cork-huguenot-history",
+      "title": "Cork's Huguenot history",
+      "status": "research-lead",
+      "summary": "Investigate whether documented Huguenot histories in Cork can support a carefully sourced local-to-local story after a specific French locality has been selected.",
+      "claimBoundary": "This is a possible historical research lead. It is not presented as the official reason for the Cork-France pairing, as a verified connection to any particular French locality, or as a finished story.",
+      "studentVoices": [],
+      "sourceRefs": [],
+      "publicationRequirements": [
+        "Add reliable sources for every substantive historical claim.",
+        "Ask a qualified reviewer to check the interpretation.",
+        "Explain the relevance to the selected French locality.",
+        "Keep documented fact separate from student reflection."
+      ]
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "choose-local-focus",
+      "question": "Which specific French locality should students pair with Cork for this research project?",
+      "status": "open",
+      "priority": "essential"
+    },
+    {
+      "id": "find-student-partners",
+      "question": "Which student group or educational partner in that locality can research alongside UCC students?",
+      "status": "open",
+      "priority": "essential"
+    },
+    {
+      "id": "identify-three-to-five-comparisons",
+      "question": "Which three to five similarities and differences can be supported with reliable evidence and student experience?",
+      "status": "open",
+      "priority": "essential"
+    },
+    {
+      "id": "test-huguenot-lead",
+      "question": "What reliable archival or scholarly evidence supports a Huguenot story, and does it connect meaningfully to the selected French locality?",
+      "status": "open",
+      "priority": "research"
+    },
+    {
+      "id": "collect-human-story",
+      "question": "What consented student or community story can make the relationship human without replacing evidence?",
+      "status": "open",
+      "priority": "research"
+    }
+  ],
+  "sources": [
+    {
+      "id": "gov-ie-county-pairings-2026",
+      "title": "EU Presidency County Pairings announced by Ministers McEntee and Byrne",
+      "publisher": "Government of Ireland, Department of Foreign Affairs",
+      "url": "https://www.gov.ie/en/department-of-foreign-affairs/press-releases/eu-presidency-county-pairings-announced-by-ministers-mcentee-and-byrne/",
+      "sourceType": "official-announcement",
+      "status": "verified",
+      "supports": [
+        "The official Cork-France umbrella pairing",
+        "The 2026 EU County Pairings initiative context"
+      ],
+      "doesNotSupport": [
+        "Any specific French local research focus",
+        "The Huguenot research lead as the official reason for the pairing",
+        "Any student-authored similarity, difference or story"
+      ]
+    }
+  ],
+  "reviewMetadata": {
+    "recordStatus": "published-prototype",
+    "editorialReviewStatus": "under-review",
+    "dataModelUpdated": "2026-07-30",
+    "lastReviewed": null,
+    "reviewedBy": null,
+    "nextReview": null,
+    "reviewRequiredBefore": [
+      "Assigning a French local research focus",
+      "Publishing student identities or quotations",
+      "Changing a research lead into a verified finding",
+      "Adding media or third-party material"
+    ],
+    "minimumEvidenceForFullProfile": {
+      "sourcedComparisons": 3,
+      "reliableSources": 2,
+      "studentPerspectiveRequired": true,
+      "factAndReflectionSeparated": true
+    }
+  },
+  "quiz": {
+    "title": "Cork-France: check the evidence",
+    "status": "published",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Which country is officially paired with Cork?",
+        "choices": [
+          {
+            "id": "france",
+            "label": "France"
+          },
+          {
+            "id": "spain",
+            "label": "Spain"
+          },
+          {
+            "id": "italy",
+            "label": "Italy"
+          }
+        ],
+        "correctChoiceId": "france",
+        "explanation": "The official 2026 umbrella pairing is Cork and France.",
+        "sourceRefs": [
+          "gov-ie-county-pairings-2026"
+        ]
+      },
+      {
+        "id": "q2",
+        "question": "Which specific French locality is the student research focus?",
+        "choices": [
+          {
+            "id": "unassigned",
+            "label": "It has not yet been assigned"
+          },
+          {
+            "id": "paris",
+            "label": "Paris"
+          },
+          {
+            "id": "brittany",
+            "label": "Brittany"
+          }
+        ],
+        "correctChoiceId": "unassigned",
+        "explanation": "No French locality should be named until students and editors select and source it.",
+        "sourceRefs": []
+      },
+      {
+        "id": "q3",
+        "question": "How is Cork's Huguenot history classified here?",
+        "choices": [
+          {
+            "id": "research-lead",
+            "label": "A research lead requiring sources and review"
+          },
+          {
+            "id": "official-reason",
+            "label": "The official reason for the pairing"
+          },
+          {
+            "id": "verified-local-link",
+            "label": "A verified link to the selected French locality"
+          }
+        ],
+        "correctChoiceId": "research-lead",
+        "explanation": "It is a possible historical line of enquiry, not the official rationale or a verified local-to-local connection.",
+        "sourceRefs": []
+      }
+    ]
+  },
+  "permissions": {
+    "recordStatus": "no-personal-contributions-published",
+    "studentNames": {
+      "items": [],
+      "consentRequired": true
+    },
+    "studentQuotes": {
+      "items": [],
+      "consentRequired": true
+    },
+    "studentMedia": {
+      "items": [],
+      "consentRequired": true
+    },
+    "thirdPartyMedia": {
+      "items": [],
+      "licenceRecordRequired": true
+    }
+  },
+  "attributions": [
+    {
+      "item": "Official Cork-France pairing data",
+      "credit": "Government of Ireland, Department of Foreign Affairs",
+      "sourceRef": "gov-ie-county-pairings-2026"
+    }
+  ]
+}

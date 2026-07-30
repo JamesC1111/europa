@@ -1,0 +1,276 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataset": "Irish counties represented in the Europa living atlas",
+  "datasetStatus": "partial-publication",
+  "scope": {
+    "description": "The 26 traditional counties in the Republic of Ireland",
+    "importantBoundary": "A status of not-yet-recorded means the atlas has not yet added and reviewed the official pairing. It must not be read as evidence that a county has no official pairing.",
+    "publishedProfiles": 1
+  },
+  "counties": [
+    {
+      "slug": "carlow",
+      "name": "Carlow",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "cavan",
+      "name": "Cavan",
+      "province": "Ulster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "clare",
+      "name": "Clare",
+      "province": "Munster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "cork",
+      "name": "Cork",
+      "province": "Munster",
+      "officialPairingStatus": "verified",
+      "officialUmbrellaPairing": {
+        "partnerCountry": "France",
+        "partnerCountryCode": "FR",
+        "initiative": "Ireland's 2026 EU County Pairings initiative"
+      },
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": "cork-france",
+      "profileStatus": "published-prototype"
+    },
+    {
+      "slug": "donegal",
+      "name": "Donegal",
+      "province": "Ulster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "dublin",
+      "name": "Dublin",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "galway",
+      "name": "Galway",
+      "province": "Connacht",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "kerry",
+      "name": "Kerry",
+      "province": "Munster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "kildare",
+      "name": "Kildare",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "kilkenny",
+      "name": "Kilkenny",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "laois",
+      "name": "Laois",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "leitrim",
+      "name": "Leitrim",
+      "province": "Connacht",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "limerick",
+      "name": "Limerick",
+      "province": "Munster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "longford",
+      "name": "Longford",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "louth",
+      "name": "Louth",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "mayo",
+      "name": "Mayo",
+      "province": "Connacht",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "meath",
+      "name": "Meath",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "monaghan",
+      "name": "Monaghan",
+      "province": "Ulster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "offaly",
+      "name": "Offaly",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "roscommon",
+      "name": "Roscommon",
+      "province": "Connacht",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "sligo",
+      "name": "Sligo",
+      "province": "Connacht",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "tipperary",
+      "name": "Tipperary",
+      "province": "Munster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "waterford",
+      "name": "Waterford",
+      "province": "Munster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "westmeath",
+      "name": "Westmeath",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "wexford",
+      "name": "Wexford",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    },
+    {
+      "slug": "wicklow",
+      "name": "Wicklow",
+      "province": "Leinster",
+      "officialPairingStatus": "not-yet-recorded",
+      "officialUmbrellaPairing": null,
+      "localResearchFocusStatus": "unassigned",
+      "pairingSlug": null,
+      "profileStatus": "not-yet-recorded"
+    }
+  ]
+}

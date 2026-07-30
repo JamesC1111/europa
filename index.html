@@ -1,95 +1,297 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IE">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Europa Society at UCC: a growing student-built map of county pairings across Europe." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Europa Society at UCC | County Pairings</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+    <meta
+      name="description"
+      content="A student-built living atlas connecting Irish counties with specific European localities through evidence, stories and collaboration."
+    />
+    <meta name="theme-color" content="#173a35" />
+    <link rel="canonical" href="https://jamesc1111.github.io/europa/" />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_IE" />
+    <meta property="og:site_name" content="Europa Society at UCC" />
+    <meta property="og:title" content="Europa County Pairings" />
+    <meta
+      property="og:description"
+      content="Ireland and Europe, connected locally. Explore the first verified pairing: Cork and France."
+    />
+    <meta property="og:url" content="https://jamesc1111.github.io/europa/" />
+    <meta
+      property="og:image"
+      content="https://jamesc1111.github.io/europa/og-share.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Europa Society at UCC county pairings: Cork and France"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="map-outline.css" />
-    <link rel="stylesheet" href="showcase.css" />
-    <link rel="stylesheet" href="brief-update.css?v=4" />
+    <script src="script.js" defer></script>
   </head>
-  <body>
-    <a class="skip-link" href="#cork-profile">Skip to the Cork profile</a>
+  <body data-root="">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <header class="site-header">
-      <a class="brand brand-logo" href="#top" aria-label="Europa Society at UCC home"><img src="europa-society-logo.png" alt="Europa Society at UCC" /></a>
-      <nav aria-label="Main navigation"><a href="#map">The map</a><a href="#how-it-grows">How it grows</a><a href="#contribute">Contribute</a></nav>
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="Europa Society at UCC home">
+          <span class="brand-mark" aria-hidden="true">E</span>
+          <span class="brand-copy">
+            <strong>Europa Society</strong>
+            <span>at UCC</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#atlas">Atlas</a>
+          <a href="pairings/cork-france/">Cork–France</a>
+          <a href="contribute/">Contribute</a>
+          <button class="nav-share" type="button" data-share>
+            Share
+          </button>
+        </nav>
+      </div>
     </header>
 
-    <main id="top">
-      <section class="hero brief-hero" aria-labelledby="hero-title">
+    <main id="main-content">
+      <section class="hero section-shell" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Europa Society at University College Cork</p>
-          <h1 id="hero-title">Every county has a <i>European Pairing.</i></h1>
-          <p class="lede">Explore the connections that link the counties of Ireland to the countries of Europe.</p>
-          <a class="button button-dark" href="#map">Explore the map <span aria-hidden="true">&darr;</span></a>
-        </div>
-        <div class="hero-europe" aria-label="European flag">
-          <img src="eu-flag.png" alt="" />
-          <span>Europe starts<br>with people.</span>
-        </div>
-      </section>
-
-      <section class="map-section" id="map" aria-labelledby="map-title">
-        <div class="section-intro">
-          <p class="eyebrow">The first connection</p>
-          <h2 id="map-title">Find a county. Follow a connection.</h2>
-          <p>The highlighted marker is ready to explore. Other pairings will be added only as their research is verified.</p>
-          <p class="local-to-local"><strong>Local to local:</strong> future pages will connect an Irish county with a specific region, city, department, or county-equivalent place abroad - built by student teams with knowledge of both places.</p>
-        </div>
-        <div class="map-layout">
-          <div class="map-card" aria-label="Map of Ireland with Cork highlighted">
-            <div class="map-key"><span class="key-dot"></span> Verified pairing <span class="key-future"></span> Research in progress</div>
-            <div class="ireland-map" role="img" aria-label="Geographic outline of the island of Ireland. Cork is highlighted at the south-west.">
-              <img class="ireland-outline" src="ireland-outline.svg" alt="" />
-              <button class="cork-marker" type="button" aria-controls="cork-profile" aria-label="Open the Cork and France pairing profile"><span class="pulse"></span><span class="marker-dot"></span><b>Cork</b></button>
-              <span class="map-water west">Atlantic<br>Ocean</span><span class="map-water east">Irish<br>Sea</span>
-            </div>
-            <p class="map-hint">Tap Cork to open its story</p>
+          <p class="eyebrow">Student research · Local connections · Shared Europe</p>
+          <h1 id="hero-title">Ireland and Europe, connected locally.</h1>
+          <p class="hero-intro">
+            A living atlas where students investigate how one Irish county
+            connects with one specific European place—through evidence,
+            differences, common ground and human stories.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#atlas">Explore the atlas</a>
+            <a class="button button-secondary" href="contribute/"
+              >Join the research</a
+            >
           </div>
-          <aside class="map-aside">
-            <p class="display-number">01</p><p class="eyebrow">Profile available</p>
-            <h3>Cork<br><span>to</span> France</h3>
-            <p>One official county-country pairing, with local stories still to be researched and added.</p>
-            <button class="text-link open-cork" type="button">Open profile <span aria-hidden="true">&rarr;</span></button>
-          </aside>
+          <ul class="trust-row">
+            <li><span aria-hidden="true">✓</span> Sources beside claims</li>
+            <li><span aria-hidden="true">✓</span> Status shown clearly</li>
+            <li><span aria-hidden="true">✓</span> Student consent first</li>
+          </ul>
+        </div>
+
+        <aside class="featured-pairing" aria-labelledby="first-pairing-title">
+          <div class="pair-flags" aria-hidden="true">
+            <span class="flag flag-ireland"></span>
+            <span class="pair-link">×</span>
+            <span class="flag flag-france"></span>
+          </div>
+          <p class="status status-verified">Verified official pairing</p>
+          <h2 id="first-pairing-title">Cork × France</h2>
+          <p>
+            The official country pairing is confirmed. The specific French
+            locality will be selected with a student team, then researched
+            openly.
+          </p>
+          <dl class="pair-summary">
+            <div>
+              <dt>Official layer</dt>
+              <dd>Cork–France</dd>
+            </div>
+            <div>
+              <dt>Local focus</dt>
+              <dd>Not yet assigned</dd>
+            </div>
+          </dl>
+          <a class="text-link" href="pairings/cork-france/"
+            >Open the evidence-led profile <span aria-hidden="true">→</span></a
+          >
+        </aside>
+      </section>
+
+      <section class="atlas-section" id="atlas" aria-labelledby="atlas-title">
+        <div class="section-shell">
+          <div class="section-heading heading-split">
+            <div>
+              <p class="eyebrow">The county atlas</p>
+              <h2 id="atlas-title">Start with a county</h2>
+              <p>
+                Select a real county shape or use the accessible directory.
+                Only checked profiles are presented as verified.
+              </p>
+            </div>
+            <div class="atlas-key">
+              <span><i class="key-swatch key-verified"></i>Profile open</span>
+              <span><i class="key-swatch key-research"></i>Not yet recorded</span>
+            </div>
+          </div>
+
+          <div class="atlas-grid">
+            <div class="map-card">
+              <div class="map-toolbar">
+                <label for="county-search">Find a county</label>
+                <input
+                  id="county-search"
+                  type="search"
+                  inputmode="search"
+                  autocomplete="off"
+                  placeholder="Try Cork"
+                />
+              </div>
+              <div
+                class="county-map"
+                data-county-map
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <p class="map-loading">Loading county map…</p>
+              </div>
+              <p class="map-credit">
+                Illustrative county geometry from Tailte Éireann, CC BY 4.0.
+                Not a legal boundary record.
+              </p>
+            </div>
+
+            <div class="county-panel">
+              <div class="county-result" data-county-result aria-live="polite">
+                <p class="eyebrow">Selected profile</p>
+                <h3>Choose a county</h3>
+                <p>
+                  Cork is the first published profile. The atlas will expand
+                  only as local-to-local research is checked.
+                </p>
+              </div>
+
+              <div class="county-directory">
+                <div class="directory-heading">
+                  <h3>All 26 counties</h3>
+                  <span data-result-count>26</span>
+                </div>
+                <div
+                  class="county-list"
+                  data-county-list
+                >
+                  <noscript>
+                    <p>
+                      JavaScript is needed for the interactive map. You can
+                      still open the
+                      <a href="pairings/cork-france/">Cork–France profile</a>.
+                    </p>
+                  </noscript>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="profile" id="cork-profile" aria-labelledby="profile-title" tabindex="-1">
-        <div class="profile-banner"><p class="eyebrow">Verified 2026 pairing</p><div class="pairing-title"><span>Cork</span><i>&times;</i><span>France</span></div><p>Official initiative pairing</p></div>
-        <div class="profile-body">
-          <div class="profile-intro"><p class="eyebrow">A place to begin</p><h2 id="profile-title">From the Atlantic edge to the heart of Europe.</h2><p>Cork is officially paired with France in Ireland's 2026 EU County Pairings initiative. This page is a starting point for students to notice connections, ask better questions, and build a richer public record.</p><p class="source-note"><strong>About the history:</strong> Huguenot links are a possible historical connection worth researching and sourcing further. They are not presented here as the official reason for the pairing.</p></div>
-          <div class="connection-grid" aria-label="Research prompts"><article class="connection-card saffron"><span>01</span><h3>Language and exchange</h3><p>Look for student, cultural, and civic encounters that make French-Irish exchange feel close to home.</p></article><article class="connection-card blue"><span>02</span><h3>Atlantic outlook</h3><p>Two places shaped by coastlines, ports, food, and outward-looking communities.</p></article><article class="connection-card coral"><span>03</span><h3>History to investigate</h3><p>Trace local archives and reliable sources for stories such as Cork's Huguenot heritage.</p></article></div>
+      <section class="method-section section-shell" id="method" aria-labelledby="method-title">
+        <div class="section-heading">
+          <p class="eyebrow">Claire’s student-collaboration model</p>
+          <h2 id="method-title">A pairing becomes a shared investigation</h2>
+          <p>
+            The government country pairing is the starting point. Students
+            choose a specific overseas locality and build the page together.
+          </p>
+        </div>
+        <ol class="process-grid">
+          <li>
+            <span class="step-number">01</span>
+            <h3>Choose locally</h3>
+            <p>
+              Pair the Irish county with a named region, city, department or
+              county-equivalent—not a whole country.
+            </p>
+          </li>
+          <li>
+            <span class="step-number">02</span>
+            <h3>Research together</h3>
+            <p>
+              Student teams find three to five sourced comparisons, meaningful
+              differences and one consented perspective.
+            </p>
+          </li>
+          <li>
+            <span class="step-number">03</span>
+            <h3>Publish responsibly</h3>
+            <p>
+              Claims carry sources and a visible status. Fact, reflection and
+              open questions never blur together.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="standards-section">
+        <div class="section-shell standards-grid">
+          <div>
+            <p class="eyebrow">The publishing standard</p>
+            <h2>Every profile shows what is known—and what is not.</h2>
+          </div>
+          <ul class="standards-list">
+            <li>
+              <strong>Verified</strong>
+              <span>A reviewed source supports the claim.</span>
+            </li>
+            <li>
+              <strong>Under review</strong>
+              <span>Material is submitted but not yet approved.</span>
+            </li>
+            <li>
+              <strong>Research lead</strong>
+              <span>A promising question, not an established fact.</span>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section class="quiz-section" aria-labelledby="quiz-title">
-        <div><p class="eyebrow">Try the three-question quiz</p><h2 id="quiz-title">How closely were you reading?</h2><p>Small questions, no pressure - just a quick way into Cork's European connection.</p></div>
-        <form class="quiz" id="quiz-form">
-          <fieldset><legend><span>1</span> Which country is officially paired with Cork?</legend><label><input type="radio" name="q1" value="France" /> France</label><label><input type="radio" name="q1" value="Spain" /> Spain</label><label><input type="radio" name="q1" value="Italy" /> Italy</label></fieldset>
-          <fieldset><legend><span>2</span> What does this prototype call the pairing?</legend><label><input type="radio" name="q2" value="official" /> An official initiative pairing</label><label><input type="radio" name="q2" value="twinning" /> A city-twinning agreement</label><label><input type="radio" name="q2" value="trade" /> A trade agreement</label></fieldset>
-          <fieldset><legend><span>3</span> How are Huguenot connections described here?</legend><label><input type="radio" name="q3" value="research" /> A topic for further sourcing</label><label><input type="radio" name="q3" value="reason" /> The official reason for the pairing</label><label><input type="radio" name="q3" value="none" /> Not connected to Cork at all</label></fieldset>
-          <button class="button button-light" type="submit">Check my answers <span aria-hidden="true">&rarr;</span></button><p class="quiz-result" id="quiz-result" aria-live="polite"></p>
-        </form>
-      </section>
-
-      <section class="collaboration" id="how-it-grows" aria-labelledby="collaboration-title">
-        <div class="collaboration-intro"><p class="eyebrow">How the atlas grows</p><h2 id="collaboration-title">A pairing becomes a page through student collaboration.</h2><p>This is not a list of destinations. Each page is a shared study of two places: what they hold in common, where they differ, and the stories that connect them.</p></div>
-        <ol class="collaboration-steps"><li><span>01</span><div><h3>Match the places</h3><p>Start with an Irish county and a named local area abroad.</p></div></li><li><span>02</span><div><h3>Research together</h3><p>Student contributors bring knowledge, questions, comparisons, and reliable sources.</p></div></li><li><span>03</span><div><h3>Share a living record</h3><p>Publish a careful page that can deepen over time as new voices and evidence arrive.</p></div></li></ol>
-      </section>
-
-      <section class="contribute" id="contribute" aria-labelledby="contribute-title">
-        <div class="contribute-heading"><p class="eyebrow">Help build the map</p><h2 id="contribute-title">Have a pairing to research?</h2><p>We welcome carefully sourced additions. A good entry starts with the evidence, not the story you hope to find.</p></div>
-        <div class="checklist" aria-label="Research checklist"><div class="check-item"><span>01</span><div><h3>Name the pair</h3><p>County, local area abroad, and the initiative or source that identifies the pairing.</p></div></div><div class="check-item"><span>02</span><div><h3>Bring a primary source</h3><p>Link an official announcement, public body, archive, or institution where possible.</p></div></div><div class="check-item"><span>03</span><div><h3>Separate fact from context</h3><p>Label historical links, local stories, and interpretations clearly - and cite them.</p></div></div><div class="check-item"><span>04</span><div><h3>Suggest a human connection</h3><p>Share a cultural, educational, civic, or community angle that can be explored responsibly.</p></div></div></div>
-        <a class="button button-dark" href="mailto:europasociety@ucc.ie?subject=County%20Pairing%20Research%20Contribution">Contribute a pairing <span aria-hidden="true">&rarr;</span></a><p class="contribute-footnote">Further verified pairings can be added to this map.</p>
+      <section class="cta-section section-shell" aria-labelledby="cta-title">
+        <div class="cta-card">
+          <div>
+            <p class="eyebrow">Build the next chapter</p>
+            <h2 id="cta-title">Bring a place, a source or a student story.</h2>
+            <p>
+              Use the guided research brief. Nothing is published until its
+              evidence, permissions and status are clear.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="button button-light" href="contribute/"
+              >Start a contribution</a
+            >
+            <button class="button button-outline-light" type="button" data-share>
+              Share this atlas
+            </button>
+          </div>
+        </div>
       </section>
     </main>
-    <footer><span>Europa Society at University College Cork</span><span>County Pairings Project</span></footer>
-    <script src="script.js"></script>
+
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <div>
+          <a class="brand brand-footer" href="./">
+            <span class="brand-mark" aria-hidden="true">E</span>
+            <span class="brand-copy">
+              <strong>Europa Society</strong>
+              <span>at UCC</span>
+            </span>
+          </a>
+          <p>A student-built, evidence-led living atlas.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="pairings/cork-france/">Cork–France</a>
+          <a href="contribute/">Contribute</a>
+          <a href="EDITORIAL_POLICY.md">Editorial policy</a>
+          <a href="https://github.com/JamesC1111/europa">GitHub</a>
+        </nav>
+        <p class="footer-note">
+          Europa Society at University College Cork. This student project is
+          not an official UCC publication.
+        </p>
+      </div>
+    </footer>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
   </body>
 </html>
