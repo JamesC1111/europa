@@ -13,6 +13,8 @@
   --gold: #c69d3f;
   --blue: #275978;
   --blue-pale: #e5eef3;
+  --eu-blue: #003399;
+  --eu-yellow: #ffcc00;
   --line: #cad4cf;
   --white: #ffffff;
   --shadow-sm: 0 8px 24px rgba(20, 39, 45, 0.08);
@@ -210,34 +212,29 @@ section[id],
   text-decoration: none;
 }
 
-.brand-mark {
-  display: grid;
-  width: 2.75rem;
-  height: 2.75rem;
+.brand-logo {
+  width: 3rem;
+  height: 3rem;
   flex: 0 0 auto;
-  place-items: center;
-  color: var(--white);
-  background: var(--coral);
-  border-radius: 50%;
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 700;
+  object-fit: cover;
+  border-radius: 0.6rem;
 }
 
 .brand-copy {
-  display: flex;
-  align-items: baseline;
-  gap: 0.28rem;
-  font-size: 1.07rem;
+  display: grid;
+  gap: 0.05rem;
+  line-height: 1.15;
 }
 
 .brand-copy strong {
+  font-size: 1rem;
   letter-spacing: -0.01em;
 }
 
 .brand-copy span {
-  font-family: var(--serif);
-  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 650;
 }
 
 .site-nav {
@@ -292,7 +289,7 @@ section[id],
 .hero {
   display: grid;
   min-height: 720px;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
   align-items: center;
   gap: clamp(3rem, 8vw, 7rem);
   padding-block: clamp(4rem, 9vw, 7.5rem);
@@ -304,8 +301,49 @@ section[id],
 
 .hero-intro {
   max-width: 62ch;
-  margin-bottom: 2rem;
+  margin-bottom: 0.65rem;
   font-size: clamp(1.1rem, 2vw, 1.35rem);
+}
+
+.hero-clarifier {
+  max-width: 59ch;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.eu-highlight {
+  padding: 0 0.12em 0.04em;
+  color: var(--eu-yellow);
+  background: var(--eu-blue);
+  border-radius: 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.eu-hero-visual {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  background: var(--eu-blue);
+  border: 1px solid rgba(0, 33, 117, 0.3);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.eu-hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 204, 0, 0.5);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.eu-hero-visual img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 }
 
 .hero-actions,
@@ -388,34 +426,6 @@ section[id],
   font-weight: 900;
 }
 
-.featured-pairing {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(1.5rem, 4vw, 2.4rem);
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-}
-
-.featured-pairing::after {
-  content: "01";
-  position: absolute;
-  right: -0.25rem;
-  bottom: -2.6rem;
-  color: rgba(23, 63, 56, 0.06);
-  font-family: var(--serif);
-  font-size: 11rem;
-  font-weight: 700;
-  line-height: 1;
-  pointer-events: none;
-}
-
-.featured-pairing > * {
-  position: relative;
-  z-index: 1;
-}
-
 .pair-flags {
   display: flex;
   align-items: center;
@@ -489,37 +499,6 @@ section[id],
 .status-unassigned {
   color: #244e68;
   background: var(--blue-pale);
-}
-
-.featured-pairing h2 {
-  margin-bottom: 1rem;
-  font-size: clamp(2.2rem, 4vw, 3.35rem);
-}
-
-.pair-summary {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.7rem;
-  margin: 1.5rem 0;
-}
-
-.pair-summary div {
-  padding: 0.8rem;
-  background: var(--paper-cool);
-  border-radius: var(--radius-sm);
-}
-
-.pair-summary dt {
-  color: var(--ink-soft);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.pair-summary dd {
-  margin: 0.18rem 0 0;
-  font-weight: 800;
 }
 
 .text-link {
@@ -920,6 +899,10 @@ section[id],
 .brand-footer .brand-copy,
 .site-footer a {
   color: var(--white);
+}
+
+.brand-footer .brand-copy span {
+  color: #bbc9ce;
 }
 
 .site-footer p {
@@ -1567,10 +1550,6 @@ section[id],
     min-height: auto;
   }
 
-  .featured-pairing {
-    max-width: 620px;
-  }
-
   .heading-split {
     align-items: flex-start;
     flex-direction: column;
@@ -1645,9 +1624,9 @@ section[id],
     justify-self: center;
   }
 
-  .brand-mark {
-    width: 2.4rem;
-    height: 2.4rem;
+  .brand-logo {
+    width: 2.6rem;
+    height: 2.6rem;
   }
 
   .site-nav {
@@ -1695,7 +1674,6 @@ section[id],
     grid-template-columns: 1fr;
   }
 
-  .pair-summary,
   .two-column,
   .comparison-grid,
   .team-grid,
