@@ -119,6 +119,15 @@ try {
           );
         }
 
+        const navigationLabels = await page
+          .locator(".site-nav a")
+          .allTextContents();
+        if (!navigationLabels.includes("About") || navigationLabels.some((label) => /cork.*france/i.test(label))) {
+          failures.push(
+            `${route.name}/${screen.name}: primary navigation must show About and not Cork–France.`,
+          );
+        }
+
         if (route.name === "home") {
           await page.locator(".county-shape").first().waitFor();
           const shapes = await page.locator(".county-shape").count();
