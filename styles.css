@@ -611,6 +611,12 @@ section[id],
   color: #667a80;
 }
 
+.map-return {
+  width: auto;
+  min-height: 46px;
+  white-space: nowrap;
+}
+
 .county-map {
   display: grid;
   min-height: 560px;
@@ -621,6 +627,75 @@ section[id],
   width: min(100%, 520px);
   max-height: 555px;
   overflow: visible;
+}
+
+.county-map.is-europe-view {
+  align-items: stretch;
+}
+
+.europe-connection {
+  position: relative;
+  display: grid;
+  min-height: 560px;
+  place-items: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+.europe-connection img {
+  width: min(100%, 555px);
+  max-height: 520px;
+  object-fit: contain;
+  filter: sepia(0.18) saturate(0.8) contrast(0.96);
+}
+
+.connection-line {
+  position: absolute;
+  width: 26%;
+  height: 3px;
+  left: 20.5%;
+  top: 41%;
+  background: var(--coral);
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px rgba(217, 103, 81, 0.16);
+  transform: rotate(24deg);
+  transform-origin: left center;
+}
+
+.connection-marker {
+  position: absolute;
+  z-index: 1;
+  padding: 0.3rem 0.48rem;
+  color: var(--white);
+  background: var(--green);
+  border: 2px solid var(--white);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.marker-cork {
+  left: 15.5%;
+  top: 36%;
+}
+
+.marker-france {
+  left: 44%;
+  top: 49%;
+}
+
+.europe-connection figcaption {
+  position: absolute;
+  bottom: 0.25rem;
+  left: 50%;
+  padding: 0.25rem 0.6rem;
+  color: var(--coral-dark);
+  background: var(--coral-pale);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  transform: translateX(-50%);
 }
 
 .county-shape {
@@ -1778,6 +1853,25 @@ section[id],
 
   .county-map svg {
     max-height: 430px;
+  }
+
+  .europe-connection {
+    min-height: 430px;
+  }
+
+  .connection-line {
+    left: 19%;
+    top: 40%;
+  }
+
+  .marker-cork {
+    left: 12%;
+    top: 35%;
+  }
+
+  .marker-france {
+    left: 44%;
+    top: 48%;
   }
 
   .county-list {

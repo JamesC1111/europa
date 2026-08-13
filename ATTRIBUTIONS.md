@@ -8,6 +8,7 @@ contributor-submitted media.
 
 | File or service | Creator or source | Licence or status | Required treatment |
 | --- | --- | --- | --- |
+| Europe connection map | [Europe blank map.svg, Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Europe_blank_map.svg) | Public domain | Used as the geographic base for the Cork-to-France connection view |
 | `data/county-map.json` | [Tailte Éireann, Counties - National Statutory Boundaries - 2019 - Generalised 20m](https://data.gov.ie/dataset/counties-national-statutory-boundaries-2019-generalised-20m1) | [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) | Attribute Tailte Éireann. Geometry has been web-simplified and scaled from Irish Transverse Mercator; it is illustrative, not a legal boundary record |
 | `europa-ucc-logo.png` and derived `favicon.png` | Europa Society at UCC project-supplied mark | Excluded from MIT; no general reuse licence recorded | Use only for this project or with permission from the mark's owner |
 | `eu-flag.png` | Project-supplied representation of the European flag | Excluded from MIT; source-file provenance is not yet recorded | Use only for this project until provenance is confirmed; do not imply EU endorsement |

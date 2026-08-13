@@ -107,6 +107,7 @@
     const listContainer = document.querySelector("[data-county-list]");
     const resultContainer = document.querySelector("[data-county-result]");
     const search = document.querySelector("#county-search");
+    const returnToIreland = document.querySelector("[data-return-to-ireland]");
     const resultCount = document.querySelector("[data-result-count]");
     if (!mapContainer || !listContainer || !resultContainer || !search) return;
 
@@ -151,6 +152,38 @@
       const buttonBySlug = new Map();
       let activeSlug = "";
 
+      function showIrelandView() {
+        mapContainer.classList.remove("is-europe-view");
+        mapContainer.replaceChildren(svg);
+        search.hidden = false;
+        returnToIreland.hidden = true;
+      }
+
+      function showEuropeConnection() {
+        mapContainer.classList.add("is-europe-view");
+        search.hidden = true;
+        returnToIreland.hidden = false;
+
+        const connection = document.createElement("figure");
+        connection.className = "europe-connection";
+        const map = document.createElement("img");
+        map.src = "https://upload.wikimedia.org/wikipedia/commons/8/8f/Europe_blank_map.svg";
+        map.alt = "Map of Europe showing a connection from Cork in Ireland to France.";
+        const line = document.createElement("span");
+        line.className = "connection-line";
+        line.setAttribute("aria-hidden", "true");
+        const cork = document.createElement("span");
+        cork.className = "connection-marker marker-cork";
+        cork.textContent = "Cork";
+        const france = document.createElement("span");
+        france.className = "connection-marker marker-france";
+        france.textContent = "France";
+        const caption = document.createElement("figcaption");
+        caption.textContent = "Cork × France";
+        connection.append(map, line, cork, france, caption);
+        mapContainer.replaceChildren(connection);
+      }
+
       function selectCounty(county, updateHash = true) {
         activeSlug = county.slug;
         for (const [slug, shape] of shapeBySlug) {
@@ -162,6 +195,11 @@
           button.classList.toggle("is-active", slug === activeSlug);
         }
         renderCountyResult(resultContainer, county);
+        if (county.slug === "cork") {
+          showEuropeConnection();
+        } else {
+          showIrelandView();
+        }
         if (updateHash) {
           history.replaceState(null, "", `#county-${county.slug}`);
         }
@@ -214,6 +252,11 @@
       svg.append(title, description, group);
       mapContainer.replaceChildren(svg);
       mapContainer.setAttribute("aria-busy", "false");
+
+      returnToIreland.addEventListener("click", () => {
+        showIrelandView();
+        shapeBySlug.get(activeSlug)?.focus({ preventScroll: true });
+      });
 
       search.addEventListener("input", () => {
         const query = search.value.trim().toLocaleLowerCase("en-IE");

@@ -149,6 +149,11 @@ try {
               `home/${screen.name}: Cork does not expose its permanent profile route.`,
             );
           }
+          await page.locator(".europe-connection").waitFor();
+          await page
+            .getByRole("button", { name: "Back to Ireland" })
+            .click();
+          await page.locator(".county-map svg").waitFor();
           await page.locator('.county-button[data-slug="clare"]').click();
           await page
             .locator("[data-county-result] h3")
