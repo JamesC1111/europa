@@ -61,9 +61,9 @@
     if (county.profileStatus === "published-prototype") {
       return {
         statusClass: "status-verified",
-        status: "Verified official pairing",
+        status: "County Pairing",
         title: `${county.name} × ${county.officialUmbrellaPairing.partnerCountry}`,
-        text: "The official country pairing is sourced. The specific local research focus and student team are still to be selected.",
+        text: "",
       };
     }
     return {
@@ -85,10 +85,13 @@
     const heading = document.createElement("h3");
     heading.textContent = description.title;
 
-    const paragraph = document.createElement("p");
-    paragraph.textContent = description.text;
+    container.append(status, heading);
 
-    container.append(status, heading, paragraph);
+    if (description.text) {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = description.text;
+      container.append(paragraph);
+    }
 
     if (county.pairingSlug) {
       const link = document.createElement("a");
