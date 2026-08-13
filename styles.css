@@ -731,10 +731,22 @@ section[id],
   font-weight: 800;
 }
 
+.directory-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.6rem;
+  padding: 0.75rem 0.65rem 0.2rem;
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 .county-list {
   display: grid;
   max-height: 385px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 0.4rem;
   overflow-y: auto;
   padding: 0.8rem 0.2rem 0.2rem;
@@ -742,10 +754,11 @@ section[id],
 }
 
 .county-button {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   min-height: 44px;
   align-items: center;
-  justify-content: space-between;
   gap: 0.45rem;
   padding: 0.55rem 0.65rem;
   color: var(--ink);
@@ -757,6 +770,12 @@ section[id],
   text-align: left;
 }
 
+.county-button-country {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
 .county-button:hover,
 .county-button.is-active {
   background: var(--green-pale);
@@ -765,11 +784,14 @@ section[id],
 
 .county-button[data-profile="published-prototype"]::after {
   content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.65rem;
   width: 0.55rem;
   height: 0.55rem;
-  flex: 0 0 auto;
   background: var(--coral);
   border-radius: 50%;
+  transform: translateY(-50%);
 }
 
 .county-button[hidden] {
@@ -1748,7 +1770,7 @@ section[id],
   }
 
   .county-list {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     max-height: 430px;
   }
 

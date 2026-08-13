@@ -196,7 +196,13 @@
         button.className = "county-button";
         button.dataset.slug = county.slug;
         button.dataset.profile = county.profileStatus;
-        button.textContent = county.name;
+        const countyName = document.createElement("span");
+        countyName.className = "county-button-name";
+        countyName.textContent = county.name;
+        const partnerCountry = document.createElement("span");
+        partnerCountry.className = "county-button-country";
+        partnerCountry.textContent = county.officialUmbrellaPairing.partnerCountry;
+        button.append(countyName, partnerCountry);
         button.addEventListener("click", () => {
           selectCounty(county);
           shape.focus({ preventScroll: true });
