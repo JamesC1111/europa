@@ -906,21 +906,32 @@ section[id],
   align-items: center;
   gap: 2rem;
   padding: clamp(2rem, 6vw, 4.5rem);
-  color: var(--white);
-  background: var(--coral-dark);
+  color: var(--ink);
+  background: var(--eu-yellow);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
 }
 
 .cta-card h2,
 .cta-card .eyebrow {
-  color: var(--white);
+  color: var(--ink);
 }
 
 .cta-card p {
   max-width: 58ch;
   margin-bottom: 0;
-  color: #fae9e3;
+  color: var(--ink-soft);
+}
+
+.cta-card .button-outline-light {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.cta-card .button-outline-light:hover {
+  color: var(--white);
+  background: var(--ink);
+  border-color: var(--ink);
 }
 
 .cta-actions {
