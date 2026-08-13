@@ -992,6 +992,15 @@ section[id],
   color: var(--ink);
 }
 
+.cta-subheading {
+  max-width: 16ch;
+  margin: 0.35rem 0 1rem;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 3.25rem);
+  line-height: 0.98;
+}
+
 .cta-card p {
   max-width: 58ch;
   margin-bottom: 0;
