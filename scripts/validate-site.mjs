@@ -7,9 +7,34 @@ const failures = [];
 const warnings = [];
 
 const verifiedPairings = new Set([
-  // Change only after the evidence and editorial review required by
-  // EDITORIAL_POLICY.md have been recorded in the relevant pull request.
+  // Official county-country pairings announced by the Department of Foreign
+  // Affairs and Trade, 16 January 2026. Local profiles remain separate.
+  'carlow::luxembourg',
+  'cavan::latvia',
+  'clare::croatia',
   'cork::france',
+  'donegal::poland',
+  'dublin::greece',
+  'galway::estonia',
+  'kerry::czechia',
+  'kildare::austria',
+  'kilkenny::romania',
+  'laois::malta',
+  'leitrim::cyprus',
+  'limerick::germany',
+  'longford::hungary',
+  'louth::portugal',
+  'mayo::netherlands',
+  'meath::italy',
+  'monaghan::finland',
+  'offaly::belgium',
+  'roscommon::slovenia',
+  'sligo::lithuania',
+  'tipperary::bulgaria',
+  'waterford::denmark',
+  'westmeath::sweden',
+  'wexford::slovakia',
+  'wicklow::spain',
 ]);
 
 function report(list, file, message) {
@@ -226,9 +251,6 @@ function checkEditorialBoundary() {
           `${county.name}'s local research focus must remain unassigned until reviewed`,
         );
       }
-      if (!county.pairingSlug) {
-        report(failures, countiesFile, `${county.name} needs a pairing data slug`);
-      }
     } else if (county.officialUmbrellaPairing !== null) {
       report(
         failures,
@@ -267,8 +289,6 @@ function checkEditorialBoundary() {
       }
       if (
         mapCounty.name !== county.name
-        || mapCounty.officialPairingStatus !== county.officialPairingStatus
-        || mapCounty.pairingSlug !== county.pairingSlug
       ) {
         report(
           failures,

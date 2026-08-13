@@ -140,6 +140,14 @@ try {
               `home/${screen.name}: Cork does not expose its permanent profile route.`,
             );
           }
+          await page.locator('.county-button[data-slug="clare"]').click();
+          await page
+            .locator("[data-county-result] h3")
+            .getByText("Clare × Croatia")
+            .waitFor();
+          await page
+            .getByText("No contributions have been added to the atlas yet.")
+            .waitFor();
         }
 
         if (route.name === "cork-france" && screen.name === "desktop") {

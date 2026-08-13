@@ -69,8 +69,8 @@
     return {
       statusClass: "status-unassigned",
       status: "Not yet recorded",
-      title: county.name,
-      text: "This atlas has not yet added and checked this county’s profile. That does not mean no official pairing exists.",
+      title: `${county.name} × ${county.officialUmbrellaPairing.partnerCountry}`,
+      text: "No contributions have been added to the atlas yet.",
     };
   }
 
@@ -108,9 +108,27 @@
     if (!mapContainer || !listContainer || !resultContainer || !search) return;
 
     try {
-      const response = await fetch(`${root}data/county-map.json`);
-      if (!response.ok) throw new Error(`Map data returned ${response.status}.`);
-      const data = await response.json();
+      const [mapResponse, countiesResponse] = await Promise.all([
+        fetch(`${root}data/county-map.json`),
+        fetch(`${root}data/counties.json`),
+      ]);
+      if (!mapResponse.ok || !countiesResponse.ok) {
+        throw new Error("County data could not be loaded.");
+      }
+      const [mapData, countiesData] = await Promise.all([
+        mapResponse.json(),
+        countiesResponse.json(),
+      ]);
+      const geometryBySlug = new Map(
+        mapData.counties.map((county) => [county.slug, county]),
+      );
+      const data = {
+        ...mapData,
+        counties: countiesData.counties.map((county) => ({
+          ...geometryBySlug.get(county.slug),
+          ...county,
+        })),
+      };
 
       const namespace = "http://www.w3.org/2000/svg";
       const svg = document.createElementNS(namespace, "svg");
