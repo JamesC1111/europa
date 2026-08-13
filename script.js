@@ -97,7 +97,7 @@
       const link = document.createElement("a");
       link.className = "button button-light";
       link.href = `${root}pairings/${county.pairingSlug}/`;
-      link.textContent = "Open the full profile";
+      link.textContent = "Open full preview";
       container.append(link);
     }
   }
