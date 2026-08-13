@@ -951,6 +951,26 @@ section[id],
   font-size: 0.8rem;
 }
 
+.footer-slogan {
+  grid-column: 1 / -1;
+  margin: 0 !important;
+  color: var(--white) !important;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.25;
+}
+
+.footer-slogan span {
+  display: inline-block;
+  margin-top: 0.3rem;
+  color: #bbc9ce;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .toast {
   position: fixed;
   right: 1rem;
@@ -1750,6 +1770,10 @@ section[id],
   }
 
   .footer-note {
+    grid-column: auto;
+  }
+
+  .footer-slogan {
     grid-column: auto;
   }
 
