@@ -102,14 +102,39 @@
     }
   }
 
+  function renderPairingPrompt(container, title, text) {
+    container.replaceChildren();
+
+    const label = document.createElement("p");
+    label.className = "eyebrow";
+    label.textContent = "County Pairing";
+
+    const heading = document.createElement("h3");
+    heading.textContent = title;
+
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+
+    container.append(label, heading, paragraph);
+  }
+
   async function initialiseCountyAtlas() {
     const mapContainer = document.querySelector("[data-county-map]");
     const listContainer = document.querySelector("[data-county-list]");
+    const memberStateList = document.querySelector("[data-member-state-list]");
     const resultContainer = document.querySelector("[data-county-result]");
     const search = document.querySelector("#county-search");
     const returnToIreland = document.querySelector("[data-return-to-ireland]");
     const resultCount = document.querySelector("[data-result-count]");
-    if (!mapContainer || !listContainer || !resultContainer || !search) return;
+    if (
+      !mapContainer ||
+      !listContainer ||
+      !memberStateList ||
+      !resultContainer ||
+      !search
+    ) {
+      return;
+    }
 
     try {
       const [mapResponse, countiesResponse] = await Promise.all([
@@ -150,7 +175,9 @@
       const group = document.createElementNS(namespace, "g");
       const shapeBySlug = new Map();
       const buttonBySlug = new Map();
-      let activeSlug = "";
+      const memberStateButtonByName = new Map();
+      let selectedCounty;
+      let selectedMemberState = "";
 
       function showIrelandView() {
         mapContainer.classList.remove("is-europe-view");
@@ -184,25 +211,61 @@
         mapContainer.replaceChildren(connection);
       }
 
-      function selectCounty(county, updateHash = true) {
-        activeSlug = county.slug;
+      function syncSelection() {
         for (const [slug, shape] of shapeBySlug) {
-          const isActive = slug === activeSlug;
+          const isActive = slug === selectedCounty?.slug;
           shape.classList.toggle("is-active", isActive);
           shape.setAttribute("aria-pressed", String(isActive));
         }
         for (const [slug, button] of buttonBySlug) {
-          button.classList.toggle("is-active", slug === activeSlug);
+          button.classList.toggle("is-active", slug === selectedCounty?.slug);
         }
-        renderCountyResult(resultContainer, county);
-        if (county.slug === "cork") {
+        for (const [memberState, button] of memberStateButtonByName) {
+          button.classList.toggle("is-active", memberState === selectedMemberState);
+        }
+      }
+
+      function updatePairing(updateHash = true) {
+        syncSelection();
+        if (!selectedCounty || !selectedMemberState) {
+          showIrelandView();
+          renderPairingPrompt(
+            resultContainer,
+            "Select a county and EU member state",
+            "Your selected pairing will appear here.",
+          );
+          return;
+        }
+
+        const expectedMemberState =
+          selectedCounty.officialUmbrellaPairing.partnerCountry;
+        if (selectedMemberState !== expectedMemberState) {
+          showIrelandView();
+          renderPairingPrompt(
+            resultContainer,
+            "Select the matching EU member state",
+            `${selectedCounty.name} is paired with ${expectedMemberState}.`,
+          );
+          return;
+        }
+
+        renderCountyResult(resultContainer, selectedCounty);
+        if (selectedCounty.slug === "cork") {
           showEuropeConnection();
         } else {
           showIrelandView();
         }
         if (updateHash) {
-          history.replaceState(null, "", `#county-${county.slug}`);
+          history.replaceState(null, "", `#county-${selectedCounty.slug}`);
         }
+      }
+
+      function selectCounty(county, selectMatchingMemberState, updateHash = true) {
+        selectedCounty = county;
+        if (selectMatchingMemberState) {
+          selectedMemberState = county.officialUmbrellaPairing.partnerCountry;
+        }
+        updatePairing(updateHash);
       }
 
       for (const county of data.counties) {
@@ -219,11 +282,11 @@
             ? `verified pairing with ${county.officialUmbrellaPairing.partnerCountry}`
             : "profile not yet recorded";
         shape.setAttribute("aria-label", `${county.name}, ${state}`);
-        shape.addEventListener("click", () => selectCounty(county));
+        shape.addEventListener("click", () => selectCounty(county, true));
         shape.addEventListener("keydown", (event) => {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            selectCounty(county);
+            selectCounty(county, true);
           }
         });
         group.append(shape);
@@ -237,16 +300,34 @@
         const countyName = document.createElement("span");
         countyName.className = "county-button-name";
         countyName.textContent = county.name;
-        const partnerCountry = document.createElement("span");
-        partnerCountry.className = "county-button-country";
-        partnerCountry.textContent = county.officialUmbrellaPairing.partnerCountry;
-        button.append(countyName, partnerCountry);
+        button.append(countyName);
         button.addEventListener("click", () => {
-          selectCounty(county);
+          selectCounty(county, false);
           shape.focus({ preventScroll: true });
         });
         listContainer.append(button);
         buttonBySlug.set(county.slug, button);
+      }
+
+      const memberStates = [
+        ...new Set(
+          data.counties.map(
+            (county) => county.officialUmbrellaPairing.partnerCountry,
+          ),
+        ),
+      ].sort((first, second) => first.localeCompare(second, "en-IE"));
+
+      for (const memberState of memberStates) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "member-state-button";
+        button.textContent = memberState;
+        button.addEventListener("click", () => {
+          selectedMemberState = memberState;
+          updatePairing();
+        });
+        memberStateList.append(button);
+        memberStateButtonByName.set(memberState, button);
       }
 
       svg.append(title, description, group);
@@ -255,7 +336,7 @@
 
       returnToIreland.addEventListener("click", () => {
         showIrelandView();
-        shapeBySlug.get(activeSlug)?.focus({ preventScroll: true });
+        shapeBySlug.get(selectedCounty?.slug)?.focus({ preventScroll: true });
       });
 
       search.addEventListener("input", () => {
@@ -276,7 +357,7 @@
           const county = data.counties.find(
             (item) => !buttonBySlug.get(item.slug).hidden,
           );
-          selectCounty(county, false);
+          selectCounty(county, true, false);
         }
       });
 
@@ -286,7 +367,7 @@
       const initialCounty = data.counties.find(
         (county) => county.slug === initialSlug,
       );
-      if (initialCounty) selectCounty(initialCounty, false);
+      if (initialCounty) selectCounty(initialCounty, true, false);
     } catch (error) {
       mapContainer.setAttribute("aria-busy", "false");
       const message = document.createElement("p");

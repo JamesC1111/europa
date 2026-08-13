@@ -143,6 +143,9 @@ try {
           }
           await page.locator('.county-button[data-slug="cork"]').click();
           await page
+            .getByRole("button", { name: "France", exact: true })
+            .click();
+          await page
             .locator("[data-county-result] h3")
             .getByText("Cork × France")
             .waitFor();
@@ -165,6 +168,9 @@ try {
             );
           }
           await page.locator('.county-button[data-slug="clare"]').click();
+          await page
+            .getByRole("button", { name: "Croatia", exact: true })
+            .click();
           await page
             .locator("[data-county-result] h3")
             .getByText("Clare × Croatia")

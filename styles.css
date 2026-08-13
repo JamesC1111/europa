@@ -822,7 +822,14 @@ section[id],
   text-transform: uppercase;
 }
 
-.county-list {
+.directory-lists {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.4rem;
+}
+
+.county-list,
+.member-state-list {
   display: grid;
   max-height: 385px;
   grid-template-columns: 1fr;
@@ -832,13 +839,11 @@ section[id],
   scrollbar-color: var(--green-2) transparent;
 }
 
-.county-button {
+.county-button,
+.member-state-button {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  display: block;
   min-height: 44px;
-  align-items: center;
-  gap: 0.45rem;
   padding: 0.55rem 0.65rem;
   color: var(--ink);
   background: var(--paper);
@@ -849,14 +854,10 @@ section[id],
   text-align: left;
 }
 
-.county-button-country {
-  color: var(--ink-soft);
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-
 .county-button:hover,
-.county-button.is-active {
+.county-button.is-active,
+.member-state-button:hover,
+.member-state-button.is-active {
   background: var(--green-pale);
   border-color: #77958b;
 }
@@ -1887,7 +1888,8 @@ section[id],
     top: 48%;
   }
 
-  .county-list {
+  .county-list,
+  .member-state-list {
     grid-template-columns: 1fr;
     max-height: 430px;
   }
