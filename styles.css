@@ -617,6 +617,10 @@ section[id],
   white-space: nowrap;
 }
 
+.map-return[hidden] {
+  display: none;
+}
+
 .county-map {
   display: grid;
   min-height: 560px;

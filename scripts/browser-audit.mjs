@@ -130,6 +130,11 @@ try {
 
         if (route.name === "home") {
           await page.locator(".county-shape").first().waitFor();
+          if (await page.getByRole("button", { name: "Back to Ireland" }).isVisible()) {
+            failures.push(
+              `home/${screen.name}: the return control is visible before Cork is selected.`,
+            );
+          }
           const shapes = await page.locator(".county-shape").count();
           if (shapes !== 26) {
             failures.push(
@@ -154,6 +159,11 @@ try {
             .getByRole("button", { name: "Back to Ireland" })
             .click();
           await page.locator(".county-map svg").waitFor();
+          if (await page.getByRole("button", { name: "Back to Ireland" }).isVisible()) {
+            failures.push(
+              `home/${screen.name}: the return control remains visible after returning to Ireland.`,
+            );
+          }
           await page.locator('.county-button[data-slug="clare"]').click();
           await page
             .locator("[data-county-result] h3")
