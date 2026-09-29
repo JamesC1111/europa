@@ -152,7 +152,9 @@ try {
         if (route.name === "clare") {
           await page.getByRole("heading", { name: "Clare × Croatia" }).waitFor();
           await page
-            .getByText("No contributions have been added to this profile yet.")
+            .getByText(
+              "Community contributions will appear here as clickable cards once the contribution sheet begins to populate.",
+            )
             .waitFor();
         }
 

@@ -12,9 +12,9 @@
   }
 
   function contributionCard(item) {
-    const article = document.createElement("article");
+    const article = document.createElement("details");
     article.className = "contribution-card";
-    const title = document.createElement("h3");
+    const title = document.createElement("summary");
     title.textContent = item.title || "Community contribution";
     const text = document.createElement("p");
     text.textContent = item.contribution;
@@ -63,7 +63,10 @@
         (item) => item.county === county.slug && item.published === true,
       );
       if (!published.length) {
-        showMessage(contributions, "No contributions have been added to this profile yet.");
+        showMessage(
+          contributions,
+          "Community contributions will appear here as clickable cards once the contribution sheet begins to populate.",
+        );
         return;
       }
       contributions.replaceChildren(...published.map(contributionCard));

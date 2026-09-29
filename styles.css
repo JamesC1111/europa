@@ -841,8 +841,15 @@ section[id],
   border-radius: var(--radius-sm);
 }
 
-.contribution-card h3 {
-  margin-top: 0;
+.contribution-card summary {
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.contribution-card summary::marker {
+  color: var(--coral-dark);
 }
 
 .research-form,
