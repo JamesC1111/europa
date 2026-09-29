@@ -4,6 +4,34 @@
   const root = document.body.dataset.root || "";
   const toast = document.querySelector("[data-toast]");
   let toastTimer;
+  const gaaCountyColours = Object.freeze({
+    carlow: ["#177245", "#e4b62e"],
+    cavan: ["#1f5fae", "#ffffff"],
+    clare: ["#f1bd24", "#2362a8"],
+    cork: ["#d92e28", "#ffffff"],
+    donegal: ["#167043", "#e5bf24"],
+    dublin: ["#65b8df", "#173d70"],
+    galway: ["#791f3e", "#ffffff"],
+    kerry: ["#177245", "#dfae24"],
+    kildare: ["#ffffff", "#23734a"],
+    kilkenny: ["#1f2020", "#e4b229"],
+    laois: ["#1f5fae", "#ffffff"],
+    leitrim: ["#1b7447", "#e8ba2c"],
+    limerick: ["#247348", "#ffffff"],
+    longford: ["#1f5fae", "#e2bd26"],
+    louth: ["#d52c2d", "#ffffff"],
+    mayo: ["#1a7449", "#d83234"],
+    meath: ["#237444", "#e7b92b"],
+    monaghan: ["#ffffff", "#225fa7"],
+    offaly: ["#227247", "#e3b52a"],
+    roscommon: ["#efd85a", "#2560a7"],
+    sligo: ["#252525", "#ffffff"],
+    tipperary: ["#2b67b1", "#e2b32a"],
+    waterford: ["#ffffff", "#2563aa"],
+    westmeath: ["#781f3f", "#ffffff"],
+    wexford: ["#5f2a82", "#e2b52c"],
+    wicklow: ["#2465af", "#e1b629"],
+  });
 
   function showToast(message) {
     if (!toast) return;
@@ -99,6 +127,9 @@
         const shape = document.createElementNS(namespace, "path");
         shape.classList.add("county-shape");
         shape.dataset.slug = county.slug;
+        const [primary, secondary] = gaaCountyColours[county.slug] || ["#d8e1dc", "#667c74"];
+        shape.style.setProperty("--county-primary", primary);
+        shape.style.setProperty("--county-secondary", secondary);
         shape.setAttribute("d", county.mapPath);
         shape.setAttribute("tabindex", "0");
         shape.setAttribute("role", "link");

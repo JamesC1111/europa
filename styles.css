@@ -559,7 +559,7 @@ section[id],
 }
 
 .key-verified {
-  background: var(--coral);
+  background: linear-gradient(135deg, #d92e28 0 33%, #f1bd24 33% 66%, #2563aa 66% 100%);
 }
 
 .key-research {
@@ -634,10 +634,10 @@ section[id],
 }
 
 .county-shape {
-  fill: #d8e1dc;
-  stroke: #667c74;
+  fill: var(--county-primary, #d8e1dc);
+  stroke: var(--county-secondary, #667c74);
   stroke-linejoin: round;
-  stroke-width: 1.2;
+  stroke-width: 2.1;
   vector-effect: non-scaling-stroke;
   transition:
     fill 130ms ease,
@@ -645,9 +645,7 @@ section[id],
 }
 
 .county-shape[data-profile="published-prototype"] {
-  fill: var(--coral);
-  stroke: #843425;
-  stroke-width: 2.1;
+  stroke-width: 2.8;
 }
 
 .county-shape:hover,
