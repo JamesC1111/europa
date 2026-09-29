@@ -59,13 +59,6 @@
       text.className = "hero-intro";
       text.textContent = `${county.name} is paired with ${county.officialUmbrellaPairing.partnerCountry}. Explore community contributions or share a discovery.`;
       profile.append(label, heading, text);
-      if (county.slug === "cork") {
-        const researchPreview = document.createElement("a");
-        researchPreview.className = "button button-secondary";
-        researchPreview.href = "../pairings/cork-france/";
-        researchPreview.textContent = "Open Cork–France research preview";
-        profile.append(researchPreview);
-      }
       const published = allContributions.filter(
         (item) => item.county === county.slug && item.published === true,
       );

@@ -156,12 +156,9 @@ try {
             .waitFor();
         }
 
-        if (route.name === "cork-france" && screen.name === "desktop") {
-          await page.locator('input[name="q1"][value="france"]').check();
-          await page.locator('input[name="q2"][value="unassigned"]').check();
-          await page.locator('input[name="q3"][value="lead"]').check();
-          await page.getByRole("button", { name: "Check my answers" }).click();
-          await page.getByText("3 out of 3", { exact: false }).waitFor();
+        if (route.name === "cork-france") {
+          await page.waitForURL(/county\/\?county=cork/);
+          await page.getByRole("heading", { name: "Cork × France" }).waitFor();
         }
 
         const accessibility = await new AxeBuilder({ page })
