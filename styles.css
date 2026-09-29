@@ -845,19 +845,6 @@ section[id],
   margin-top: 0;
 }
 
-.google-form-embed {
-  display: block;
-  width: 100%;
-  min-height: 930px;
-  margin-top: 1.25rem;
-  border: 0;
-  background: var(--white);
-}
-
-.form-fallback {
-  margin: 1rem 0 0;
-}
-
 .research-form,
 .research-sidebar {
   display: none;
