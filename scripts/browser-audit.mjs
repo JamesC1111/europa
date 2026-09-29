@@ -60,6 +60,7 @@ const screens = [
 
 const routes = [
   { name: "home", path: "/" },
+  { name: "clare", path: "/county/?county=clare" },
   { name: "cork-france", path: "/pairings/cork-france/" },
   { name: "contribute", path: "/contribute/" },
 ];
@@ -95,7 +96,7 @@ try {
 
       try {
         await page.goto(`http://${host}:${port}${route.path}`, {
-          waitUntil: "networkidle",
+          waitUntil: "domcontentloaded",
         });
         await page.locator("main").waitFor();
 
@@ -130,53 +131,28 @@ try {
 
         if (route.name === "home") {
           await page.locator(".county-shape").first().waitFor();
-          if (await page.getByRole("button", { name: "Back to Ireland" }).isVisible()) {
-            failures.push(
-              `home/${screen.name}: the return control is visible before Cork is selected.`,
-            );
-          }
           const shapes = await page.locator(".county-shape").count();
           if (shapes !== 26) {
             failures.push(
               `home/${screen.name}: expected 26 county shapes, found ${shapes}.`,
             );
           }
-          await page.locator('.county-button[data-slug="cork"]').click();
-          await page
-            .getByRole("button", { name: "France", exact: true })
-            .click();
-          await page
-            .locator("[data-county-result] h3")
-            .getByText("Cork × France")
-            .waitFor();
           const profileHref = await page
-            .locator("[data-county-result] a")
+            .locator('.county-button[data-slug="cork"]')
             .getAttribute("href");
-          if (!profileHref?.endsWith("pairings/cork-france/")) {
+          if (!profileHref?.includes("county/?county=cork")) {
             failures.push(
-              `home/${screen.name}: Cork does not expose its permanent profile route.`,
+              `home/${screen.name}: Cork does not expose its county profile route.`,
             );
           }
-          await page.locator(".europe-connection").waitFor();
+          await page.locator('.county-shape[data-slug="cork"]').click();
+          await page.waitForURL(/county\/\?county=cork/);
+        }
+
+        if (route.name === "clare") {
+          await page.getByRole("heading", { name: "Clare × Croatia" }).waitFor();
           await page
-            .getByRole("button", { name: "Back to Ireland" })
-            .click();
-          await page.locator(".county-map svg").waitFor();
-          if (await page.getByRole("button", { name: "Back to Ireland" }).isVisible()) {
-            failures.push(
-              `home/${screen.name}: the return control remains visible after returning to Ireland.`,
-            );
-          }
-          await page.locator('.county-button[data-slug="clare"]').click();
-          await page
-            .getByRole("button", { name: "Croatia", exact: true })
-            .click();
-          await page
-            .locator("[data-county-result] h3")
-            .getByText("Clare × Croatia")
-            .waitFor();
-          await page
-            .getByText("No contributions have been added to the atlas yet.")
+            .getByText("No approved contributions have been added to this profile yet.")
             .waitFor();
         }
 

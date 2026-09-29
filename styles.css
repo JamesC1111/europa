@@ -386,7 +386,7 @@ section[id],
 
 .button-secondary {
   color: var(--ink);
-  background: transparent;
+  background: var(--paper);
   border-color: var(--ink);
 }
 
@@ -852,6 +852,84 @@ section[id],
   font-size: 0.88rem;
   font-weight: 700;
   text-align: left;
+  text-decoration: none;
+}
+
+.google-form-panel {
+  grid-column: 1 / -1;
+  padding: clamp(1.1rem, 3vw, 2rem);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+.google-form-panel h2 {
+  margin: 0;
+}
+
+.county-profile-hero,
+.profile-contributions {
+  padding: clamp(1.25rem, 4vw, 3.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+.county-profile-hero {
+  background: var(--green);
+  color: var(--white);
+}
+
+.county-profile-hero .eyebrow,
+.county-profile-hero h1,
+.county-profile-hero p {
+  color: var(--white);
+}
+
+.county-profile-hero .button {
+  margin-top: 1rem;
+}
+
+.profile-contributions {
+  margin-top: 1.25rem;
+  background: var(--paper);
+}
+
+.contribution-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.contribution-card {
+  padding: 1.2rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.contribution-card h3 {
+  margin-top: 0;
+}
+
+.google-form-embed {
+  display: block;
+  width: 100%;
+  min-height: 930px;
+  margin-top: 1.25rem;
+  border: 0;
+  background: var(--white);
+}
+
+.form-fallback {
+  margin: 1rem 0 0;
+}
+
+.research-form,
+.research-sidebar {
+  display: none;
 }
 
 .county-button:hover,

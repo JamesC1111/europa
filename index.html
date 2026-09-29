@@ -96,15 +96,13 @@
           <div class="section-heading heading-split">
             <div>
               <p class="eyebrow">The County Pairings Atlas</p>
-              <h2 id="atlas-title">Start with a county</h2>
+              <h2 id="atlas-title">Choose a county</h2>
               <p>
-                Select a county or use the accessible directory to begin
-                discovering the pairings.
+                Select a county on the map to open its pairing profile.
               </p>
             </div>
             <div class="atlas-key">
-              <span><i class="key-swatch key-verified"></i>Recorded</span>
-              <span><i class="key-swatch key-research"></i>Not yet recorded</span>
+              <span><i class="key-swatch key-verified"></i>County profile</span>
             </div>
           </div>
 
@@ -119,14 +117,6 @@
                   aria-label="Type a county"
                   placeholder="Type a county"
                 />
-                <button
-                  class="button button-secondary map-return"
-                  type="button"
-                  data-return-to-ireland
-                  hidden
-                >
-                  Back to Ireland
-                </button>
               </div>
               <div
                 class="county-map"
@@ -142,36 +132,19 @@
               </p>
             </div>
 
-            <div class="county-panel">
-              <div class="county-result" data-county-result aria-live="polite">
-                <p class="eyebrow">County Pairing</p>
-                <h3>Select a county and EU member state</h3>
-                <p>
-                  Your selected pairing will appear here.
-                </p>
+            <div class="county-directory">
+              <div class="directory-heading">
+                <h3>Browse counties</h3>
+                <span data-result-count>26</span>
               </div>
-
-              <div class="county-directory">
-                <div class="directory-heading">
-                  <h3>County pairings</h3>
-                  <span data-result-count>26</span>
-                </div>
-                <div class="directory-columns" aria-hidden="true">
-                  <span>County</span>
-                  <span>EU Member State</span>
-                </div>
-                <div class="directory-lists">
-                  <div class="county-list" data-county-list>
-                    <noscript>
-                      <p>
-                        JavaScript is needed for the interactive map. You can
-                        still open the
-                        <a href="pairings/cork-france/">Cork–France profile</a>.
-                      </p>
-                    </noscript>
-                  </div>
-                  <div class="member-state-list" data-member-state-list></div>
-                </div>
+              <div class="county-list" data-county-list>
+                <noscript>
+                  <p>
+                    JavaScript is needed for the interactive map. You can
+                    still open the
+                    <a href="county/?county=cork">Cork profile</a>.
+                  </p>
+                </noscript>
               </div>
             </div>
           </div>
