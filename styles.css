@@ -634,8 +634,8 @@ section[id],
 }
 
 .county-shape {
-  fill: #d8e1dc;
-  stroke: #667c74;
+  fill: var(--county-primary, #d8e1dc);
+  stroke: var(--county-secondary, #667c74);
   stroke-linejoin: round;
   stroke-width: 2.1;
   vector-effect: non-scaling-stroke;
@@ -651,8 +651,8 @@ section[id],
 .county-shape:hover,
 .county-shape:focus-visible,
 .county-shape.is-active {
-  fill: var(--county-primary, var(--gold));
-  stroke: var(--county-secondary, var(--ink));
+  fill: var(--gold);
+  stroke: var(--ink);
   filter: drop-shadow(0 3px 4px rgba(20, 39, 45, 0.24));
 }
 
